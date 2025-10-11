@@ -19,8 +19,8 @@ volumes:
 services:
 
   nginx:
-    #image: nginx:1.23-alpine
-    image: exoplatform/nginx:1.26.3  # has nginx-sticky-module-ng to adds session persistence
+    image: nginx:1.23-alpine
+    #image: exoplatform/nginx:1.26.3  # has nginx-sticky-module-ng to adds session persistence
     container_name: nginx
     hostname: nginx
     restart: unless-stopped

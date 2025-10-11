@@ -47,6 +47,7 @@ https://serverfault.com/questions/832790/sticky-sessions-with-nginx-proxy
 
 exo nginx with sticky
 https://github.com/exo-docker/exo-nginx
+( note does not appear to actually have sticky !!)
 
 
 https://github.com/nezhar/wordpress-docker-compose/blob/master/docker-compose.yml
