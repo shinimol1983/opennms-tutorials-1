@@ -32,6 +32,8 @@ Enjoy &#128512;
 
 [session7](../main/session7/) Additional Topics and wrap up
 
+[Extra Examples](../main/extraExamples/) Additional Examples in support of the tutorials
+
 [myPracticeCourseWork](../main/myPracticeCourseWork) This is where you should create and save your own practice projects.
 
 [pristine-opennms-config-files](../main/pristine-opennms-config-files/) Untouched OpenNMS configuration files for reference.
