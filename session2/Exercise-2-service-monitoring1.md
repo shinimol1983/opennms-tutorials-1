@@ -4,12 +4,33 @@
 
 ## service 3 tier network
 
-Often sites are made scalable through load-balancing a number of servers. 
+Often sites are made scalable and more resiliant through load-balancing a number of servers. 
 In this example we have installed three wordpress servers behind an NGINX load balancer.
 
-All there server share the same MariaDB database which also maintains the session data across the servers.
+All the servers share the same MariaDB database which also maintains the session data across the servers.
 
 ![alt text](../session2/images/examplenetwork-loadbalance.drawio.png "Figure examplenetwork-loadbalance.drawio.png")
+
+You can see the wordpress configuration if you look at the [docker-compose.yml](../session2/minimal-minion-activemq/docker-compose.yaml) configuration.
+This contains a section for the OpenNMS containers, a section for three netsnmp containers (for a seperate set of exercises) and at the bottom a section for the Wordpress containers.
+
+You will see three Wordpress containers; wordpress1, wordpress2  and wordpress3. 
+These all share the same data volume `wp_data` so that the are effectively clones of each other.
+
+You will also see a wordpress-cli container. 
+This container waits for 20 seconds to allow the database and the containers to start before initialisinf the word press containers, giving them their admin username and password and an initial front page name for the site using the command:
+
+```
+      /bin/sh -c '
+      sleep 20;
+      wp core install --path="/var/www/html/wordpress" --url="https://localhost/wordpress" --title="Local Wordpress By Docker" --admin_user=admin --admin_password=secret --admin_email=foo@bar.com
+      '
+```
+After this initialisation step, this container exits.
+Without wordpress-cli, you would have the manually configure the wordpress instance on first start.
+
+The nginx configuration is held in [wp-load-balencer-with-ssl.conf](..\session2\minimal-minion-activemq\container-fs\nginx\conf.d\wp-load-balencer-with-ssl.conf).
+THis sets up https termination and the round robin request forwarding the the three wordpress servers.
 
 ## running the example
 
@@ -92,11 +113,21 @@ If you repeatedly refresh the Wordpress login page, you should see the logs adva
 
 OpenNMS can monitor the load balancer, each of the word press servers and the state of the database.
 
+
+
 browse to http://localhost:8980/opennms and login using user:admin password:admin
 
-Go to hte requistions page and inspect the test-wordpress.xml requisition. 
+Go to the requisitions page and inspect the test-wordpress requisition.
+
+THis is backed by the requisition import file [test-wordpress.xml](../session2/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/imports/test-wordpress.xml)
 Synchronise this requisition and see each of the servers in the nodes page
 
+
+try stopping one of the servers and see what happens
+
+```
+docker compose stop wordpress1
+```
 
 ## Business Service Monitoring
 
