@@ -287,5 +287,5 @@ docker compose exec horizon curl --user admin:admin -X POST http://localhost:898
 
 This completes an exercise in generating the raw event configuration files.
 
-In [Exercise-3-1](../session3/Exercise-3-4.md) we will modify and test the event configuration to add alarms.
+In [Exercise-3-4](../session3/Exercise-3-4.md) we will modify and test the event configuration to add alarms.
 
