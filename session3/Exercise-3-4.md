@@ -132,7 +132,7 @@ Having created your configuration, load it into OpenNMS and start sending some n
 # Summary
 Once we have completed this exercise we have grasped a good understanding of event processing in OpenNMS.
 
-In [Example Configurations](../session3/minimal-minion-activemq/example-configurations/) you will see two approaches to decoding the alarms.
+In [Example Configurations](../session3/example-configurations/) you will see two approaches to decoding the alarms.
 
 The simple approach merely adds a varbind substitution  to the reduction and clear keys.
 
