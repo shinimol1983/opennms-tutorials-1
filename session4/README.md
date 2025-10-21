@@ -91,7 +91,7 @@ public class OnmsAlarm implements Acknowledgeable, Serializable {
 
 ```
 You can see the JPA definitions of all of the java objects in the OpenNMS model classes folder on github.
-* [/org/opennms/netmgt/model]( https://github.com/OpenNMS/opennms/tree/opennms-33.1.6-1/opennms-model/src/main/java/org/opennms/netmgt/model)
+* [ https://github.com/OpenNMS/opennms/tree/opennms-33.1.6-1/opennms-model/src/main/java/org/opennms/netmgt/model]( https://github.com/OpenNMS/opennms/tree/opennms-33.1.6-1/opennms-model/src/main/java/org/opennms/netmgt/model)
 
 You can browse through the other entities and matching tables but for our purposes, the most important tables are `events`, `alarms` and  `node`
 
