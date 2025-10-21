@@ -136,7 +136,7 @@ pennms.org/internal/reloadDaemonConfig", "severity": "NORMAL", "parms": [{"parmN
 
 You will see a reloadDaemonConfigSuccessful event in the event list
 
-Using the mib browser or netsnmp, try sending the traps you previously sent and see how they are presented in the event list.
+Using the mib browser or netsnmp, try sending the traps you previously sent and see how they are now presented in the event list.
 
 ```
 # log into the netsnmp_1_1 container
