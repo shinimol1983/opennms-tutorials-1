@@ -144,11 +144,12 @@ services:
     # note this image doesnt have snmputils like snmpwalk
     # image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
     image: polinux/snmpd  # netsnmp 5.7.2
+    container_name: linux-01
     hostname: linux-01
     environment:
       TZ: ${TIMEZONE:-America/New_York}
     volumes:
-      - ./container-fs/snmp/snmpd.conf:/etc/snmp/snmpd.conf
+      #- ./container-fs/snmp/snmpd.conf:/etc/snmp/snmpd.conf
       - ./container-fs/snmp/linux-01/sysinfo.conf:/etc/snmp/conf.d/sysinfo.conf
     ports:
       - "1610:161/udp"
@@ -160,6 +161,7 @@ services:
     # note this image doesnt have snmputils like snmpwalk
     # image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
     image: polinux/snmpd  # netsnmp 5.7.2
+    container_name: linux-02
     hostname: linux-02
     environment:
       TZ: ${TIMEZONE:-America/New_York}
@@ -176,11 +178,12 @@ services:
     # note this image doesnt have snmputils like snmpwalk
     # image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
     image: polinux/snmpd  # netsnmp 5.7.2
+    container_name: linux-03
     hostname: linux-03
     environment:
       TZ: ${TIMEZONE:-America/New_York}
     volumes:
-      - ./container-fs/snmp/snmpd.conf:/etc/snmp/snmpd.conf
+      #- ./container-fs/snmp/snmpd.conf:/etc/snmp/snmpd.conf
       - ./container-fs/snmp/linux-03/sysinfo.conf:/etc/snmp/conf.d/sysinfo.conf
     networks:
       N001:
@@ -192,6 +195,7 @@ services:
     # note this image doesnt have snmputils like snmpwalk
     # image: quay.io/labmonkeys/net-snmp:5.9.4-r0.b2384
     image: polinux/snmpd  # netsnmp 5.7.2
+    container_name: linux-04
     hostname: linux-04
     volumes:
       - ./container-fs/snmp/snmpd.conf:/etc/snmp/snmpd.conf

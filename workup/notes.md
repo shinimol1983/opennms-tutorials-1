@@ -88,3 +88,6 @@ o	docker-compose up -d: Starts all of the services defined in a Docker Compose f
 
 Thanks for informing the participants to pre-book their agenda.
 
+
+https://github.com/labmonkeys-space/app-container/tree/main/net-snmp  Ronnys NetSnmp
+

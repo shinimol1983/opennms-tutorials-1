@@ -105,7 +105,7 @@ We will have a lot more to say about configuration as we proceed with the course
 
 ### modifying configuration files through the UI
 
-It is possible for a user to modify configuration files through the OpenNMS UI.
+It is possible for a user to modify configuration files through the [OpenNMS UI File Editor](https://docs.opennms.com/horizon/33/reference/configuration/file-editor.html).
 To do this, navigate to `info>FileEditor`.
 
 ![alt text](../session2/images/onmsFileEditor.png "Figure onmsFileEditor.png")
@@ -131,7 +131,7 @@ docker compose cp ./eventconf.xml:horizon:/usr/share/opennms/etc/
 
 Normally, configuration changes will be read when the system restarts however for a number of daemons, a daemon reload event can be sent which will restart the daemon in a running system. 
 
-For instance, to reload eventd you can use
+For instance, to reload the event daemon, `eventd` you can use
 
 ```
 docker compose exec horizon /usr/share/opennms/bin/send-event.pl uei.opennms.org/internal/reloadDaemonConfig -p 'daemonName Eventd' 
