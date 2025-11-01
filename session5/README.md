@@ -29,37 +29,41 @@ snmpwalk -On -v2c -c public localhost:1610 .1.3.6.1.2.1.1.2
 .1.3.6.1.2.1.1.2.0 = OID: .1.3.6.1.4.1.61509.42.1
 ```
 
-The lab for this exercise is in the `stack` directory using docker compose.
-You can access the following exposes services through localhost:
+The lab for this exercise is in the `minimal-minion-activemq` directory using docker compose.
 
-* http://localhost:8980: The OpenNMS Horizon web user interface
-* ssh admin@localhost -p 8101: The Karaf CLI via SSH
-* http://localhost:3000: The Grafana web user interface
-* localhost:{1610,1611,1612} udp: If you want to access the SNMP agents from your host system. Inside the Docker stack, they are listening to the default port 161/udp.
-
-Before you spin up the stack, please verify with `docker ps` you don't have any other stacks from previous sections running.
+Before you spin up the minimal-minion-activemq, please verify with `docker ps` you don't have any other docker compose projects from previous sections running.
 
 ```bash
-cd stack
+cd minimal-minion-activemq
 docker compose up -d
 ```
+You can access the following exposed services through the host system's localhost:
+
+| URL / Command | Description |
+|:--------------|:------------|
+|http://localhost:8980| The OpenNMS Horizon web user interface|
+|ssh admin@localhost -p 8101 | The Karaf CLI via SSH |
+|http://localhost:3000 |The Grafana web user interface|
+|localhost:{1610,1611,1612} udp| If you want to access the SNMP agents from your host system. Inside the Docker minimal-minion-activemq, they are listening to the default port 161/udp.|
+
+
 
 ```plain
-                              Docker Compose Stack
+                              Docker Compose Project
                              ┌──────────────────────────────────────────────────────────────────┐
                              │                                                                  │
                              │    ┌────────────────────┐              ┌────────────────────┐    │
                              │    │                    │              │                    │    │
-                             │    │     database       │              │      linux-01      │    │
-                             │    │   192.168.42.8/26  ├──────┬───────┤   192.168.42.32/26 ├────┼────── Net-SNMP 1610/udp
+                             │    │     database       │ N000         │      linux-01      │    │
+                             │    │   172.20.0.10/24   ├──────┬───────│   172.20.0.101/24  ├────┼────── Net-SNMP 1610/udp
                              │    │                    │      │       │                    │    │
                              │    │                    │      │       │                    │    │
                              │    └────────────────────┘      │       └────────────────────┘    │
                              │                                │                                 │
                              │    ┌────────────────────┐      │       ┌────────────────────┐    │
                              │    │                    │      │       │                    │    │
-       Web UI  8980/tcp ─────┼────┤        Core        │      │       │     linux-02       │    │
-                             │    │   192.168.42.9/26  ├──────┼───────┤  192.168.42.33/26  ├────┼────── Net-SNMP 1611/udp
+       Web UI  8980/tcp ─────┼────┤      Horizon       │      │       │     linux-02       │    │
+                             │    │   172.20.0.15/24   ├──────┼───────│   172.20.0.102/24  ├────┼────── Net-SNMP 1611/udp
   Karaf Shell  8101/tcp ─────┼────┤                    │      │       │                    │    │
                              │    │                    │      │       │                    │    │
                              │    └────────────────────┘      │       └────────────────────┘    │
@@ -67,9 +71,17 @@ docker compose up -d
                              │    ┌────────────────────┐      │       ┌────────────────────┐    │
                              │    │                    │      │       │                    │    │
                              │    │      Grafana       │      │       │     linux-03       │    │
-Grafana Web UI 3000/tcp ─────┼────┤   192.168.42.10/26 ├──────┴───────┤  192.168.42.34/26  ├────┼────── Net-SNMP 1612/udp
-                             │    │                    │              │                    │    │
-                             │    │                    │              │                    │    │
+Grafana Web UI 3000/tcp ─────┼────│   172.20.0.26/24   ├──────┼───────│   172.20.0.103/24  ├────┼────── Net-SNMP 1612/udp
+                             │    │                    │      │       │                    │    │
+                             │    │                    │      │       │                    │    │
+                             │    └────────────────────┘      │       └────────────────────┘    │
+                             │                                │                                 │
+                             │    ┌────────────────────┐      │       ┌────────────────────┐    │
+                             │    │       Minion1      │      │       │                    │    │
+                             │    │   172.20.0.25/24   ├──────┘       │     linux-04       │    │
+  Karaf Shell  8101/tcp ─────┼────┤                    │              │  Net-SNMP 1612/udp │    │
+                             │    │                    │ N001         │                    │    │
+                             │    │   172.20.2.25/24   ├──────────────┤   172.20.2.101/24  │    │
                              │    └────────────────────┘              └────────────────────┘    │
                              │                                                                  │
                              └──────────────────────────────────────────────────────────────────┘
