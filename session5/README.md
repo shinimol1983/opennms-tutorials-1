@@ -39,12 +39,13 @@ docker compose up -d
 ```
 You can access the following exposed services through the host system's localhost:
 
-| URL / Command | Description |
-|:--------------|:------------|
-|http://localhost:8980| The OpenNMS Horizon web user interface|
-|ssh admin@localhost -p 8101 | The Karaf CLI via SSH |
-|http://localhost:3000 |The Grafana web user interface|
-|localhost:{1610,1611,1612} udp| If you want to access the SNMP agents from your host system. Inside the Docker minimal-minion-activemq, they are listening to the default port 161/udp.|
+| URL / Command                        | Description                           |
+|:-------------------------------------|:--------------------------------------|
+|http://localhost:8980                 | The OpenNMS Horizon web user interface|
+|ssh admin@localhost&nbsp;-p&nbsp;8101 | The Horizon Karaf CLI via SSH |
+|ssh admin@localhost&nbsp;-p&nbsp;8201 | The Minion1 Karaf CLI via SSH |
+|http://localhost:3000                 |The Grafana web user interface|
+|linux-01&nbsp;localhost:1610&nbsp;udp<BR>linux-02&nbsp;localhost:1611&nbsp;udp<BR>linux-02&nbsp;localhost:11612&nbsp;udp | If you want to access the SNMP agents from your host system. Inside the Docker minimal-minion-activemq, they are listening to the default port 161/udp.|
 
 
 
