@@ -17,6 +17,7 @@ In this session we will look at a more advanced OpenNMS [Performance Data Collec
 ## Overview
 
 The majority of performance data collection in SNMP deployments is performed using SNMP but other performance data protocols are supported including plain text/CSV, ReST/XML/Json, Java JMX and WBEM. 
+
 For more details see [Performance Data Collectors](https://docs.opennms.com/horizon/30/reference/performance-data-collection/collectors.html). 
 In this session we will concentrate on SNMP data collection.
 
@@ -33,12 +34,11 @@ The relationship between SNMP data collection configuration files is illustrated
 
 ## Exercises
 
+[Exercise-5-1](../session5/Exercise-5-1.md)  Accessing the example network.
 
-[Exercise-5-1](../session5/Exercise-5-1.md)
+[Exercise-5-2](../session5/Exercise-5-2.md)  Collecting from an SNMP table.
 
-[Exercise-5-2](../session5/Exercise-5-2.md)
+[Exercise-5-3](../session5/Exercise-5-3.md)  Compiling a MIB.
 
-[Exercise-5-3](../session5/Exercise-5-3.md)
-
-[AdditionalNotes1.md](../session5/AdditionalNotes1.md)
+[AdditionalNotes1.md](../session5/AdditionalNotes1.md) Miscellaneous notes.
 
