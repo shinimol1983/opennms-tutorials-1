@@ -160,9 +160,9 @@ When you now look at the chubb-camera_01 node page, you should now see SNMP info
 
 ![alt text](../session2/images/chubb-camera_01_withSNMP.png "Figure chubb-camera_01_withSNMP.png")
 
-This SNMP configuration UI is backed by the [etc/snmp-config.xmll](../../main/pristine-opennms-config-files/etc-pristine/snmp-config.xml) file.
+This SNMP configuration UI is backed by the file [etc/snmp-config.xml](../../main/pristine-opennms-config-files/etc-pristine/snmp-config.xml).
 
-By default, this contains a very simple default configuration however an example file showing more complex configurations is also provided at [etc/examples/snmp-config.xml](../../main/pristine-opennms-config-files/etc-pristine/examples/snmp-config.xml)
+By default, this contains a very simple default configuration however an example file showing more complex configurations for snmp v3 is also provided at [etc/examples/snmp-config.xml](../../main/pristine-opennms-config-files/etc-pristine/examples/snmp-config.xml)
 
 ## Summary
 
