@@ -1,4 +1,4 @@
-# Session 5 - Performance
+# Session 5 - Performance Data Collection
 
 [Main Menu](../README.md) | [Session 5](../session5/README.md)
 
