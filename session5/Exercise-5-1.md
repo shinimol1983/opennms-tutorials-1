@@ -139,3 +139,5 @@ docker compose exec horizon ls share/rrd/snmp/fs/linux-server/linux-01
 
 - [ ] Create a custom graph definition from the `snmp-graph.properties.d` directory
 - [ ] Verify if you can see the graph in the Node Level Performance data
+
+![alt text](../session5/images/LoadAverage.png "Figure LoadAverage.png")
