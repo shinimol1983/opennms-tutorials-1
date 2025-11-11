@@ -46,7 +46,5 @@ The relationship between the SNMP data collection configuration files is illustr
 
 [Exercise-5-2](../session5/Exercise-5-2.md)  Collecting from an SNMP table.
 
-[Exercise-5-3](../session5/Exercise-5-3.md)  Compiling a MIB.
 
-[AdditionalNotes1.md](../session5/AdditionalNotes1.md) Miscellaneous notes.
 

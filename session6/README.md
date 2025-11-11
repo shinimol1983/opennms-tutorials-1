@@ -7,3 +7,8 @@ The material in this session is contained in [Session 5](../session5/README.md)
 [Session 6 Video](https://youtu.be/0Sk5pMC_L3Q)  (DEPRICATED - to be updated to match new material)
 
 
+[Exercise-5-3](../session5/Exercise-5-3.md)  Compiling a MIB.
+
+[AdditionalNotes1.md](../session5/AdditionalNotes1.md) Miscellaneous notes.
+
+
