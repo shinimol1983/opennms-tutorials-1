@@ -50,7 +50,7 @@ They should also work on Docker installed in linux  (e.g. Ubuntu 22 running in V
 In order to complete these exercises you will need docker and docker-compose for the containerised exercises. 
 The easiest way to get these packages is to install [docker-desktop](https://www.docker.com/products/docker-desktop/) which is available for Windows, Mac or Linux machines. 
 
-You will also need Java Open JDK (minimum version 17), An IDE (Eclipse or Intelij), Maven and git installed on your machine. 
+For certain exercises you may also need Java Open JDK (minimum version 17), An IDE (such as Eclipse, Intelij or  VS-code. I use Eclipse), Maven and git installed on your machine. 
 
 [Git for windows](https://git-scm.com/download/win)
 
