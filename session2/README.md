@@ -143,6 +143,11 @@ Note Perl is not installed by default in opennms containers but curl can be used
 docker compose exec horizon curl --user admin:admin -X POST http://localhost:8980/opennms/rest/events -H 'Content-Type: application/json' -d '{\"uei\": \"uei.opennms.org/internal/reloadDaemonConfig\", \"severity\": \"NORMAL\", \"parms\": [{\"parmName\": \"daemonName\", \"value\": \"Eventd\" }]}' 
 ```
 
+Finally it is also possible to reload the `Eventd` daemon from the `Karaf Shell` using:
+```
+ssh admin@localhost -o UserKnownHostsFile=/dev/null -p 8101 reload-daemon Eventd
+```
+
 ## Provisioning Requisitions
 
 In [Session 1](../session1/README.md) we looked at how OpenNMS can scan a network and add any devices it discovers. 
