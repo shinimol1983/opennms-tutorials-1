@@ -9,7 +9,7 @@ The example below only shows translations for two of the events.
 You can see we are extracting the varbind parameter named `.1.3.6.1.4.1.52330.6.2.7.0`.
 There is no need for a regular expression because the name of the varbind never changes with the value it represents.
 You will remember that in the example traps, this varbind represents the nodelabel. 
-THe SQL search uses this value to find the node so that the new event has the correct node name.
+The SQL search uses this value to find the node so that the new event has the correct node name.
 
 ```
       <!-- Translations FOR CAMERA CONTROLLER EVENTS -->
