@@ -194,3 +194,6 @@ For more information on provisioning see [Provisioning Introduction](https://doc
 and [provisioning integration](https://docs.opennms.com/horizon/33/operation/deep-dive/provisioning/integration.html)
 
 We will cover provisioning and  requisitions in more detail in a later session. 
+
+Now look at [Exercise-2-2-service-monitoring](../session2/Exercise-2-2-service-monitoring1.md)
+
