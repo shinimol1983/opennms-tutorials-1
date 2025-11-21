@@ -119,17 +119,42 @@ The user permissions are set per user under `admin > Configure Users, Groups and
 
 Saved changes will be permanent in a virtual machine or bare metal install of OpenNMS but please note that in a container, these configuration changes are ephemeral and may be lost on shutdown or overridden on startup.
 
-However you can copy files into and out of the container if you want to preserve them using the `docker compose cp` command as illustrated below.
+### Editing files directly
+
+The OpenNMS containers already have the [vi editor](https://devhints.io/vim) installed but and you can use this if you wish
+
+However we can make our lives a bit simpler if we also install the [nano editor](https://www.nano-editor.org/dist/latest/nano.html) because it is easier to use.
+
+(Note you may also need to change the background colour of the powershell to black to see all of the characters when editing xml markup. Use `Powershell>properties>colors>screen background`)
 
 ```
-# copy out of the container
+# log into the opennms horizon container as the root user
+docker compose exec -u root horizon bash
+
+# install nano 
+root@horizon:/usr/share/opennms# microdnf -y install nano
+
+# exit as root user 
+root@horizon:/usr/share/opennms# exit
+
+```
+Now we can use nano to edit our configuration
+
+## Editing externally and copying files in or out of container
+
+You can copy files into and out of the container if you want to preserve them using the `docker compose cp` command as illustrated below.
+
+```
+# copy out of the container to the local directory `.`
 
 docker compose cp horizon:/usr/share/opennms/etc/eventconf.xml .
 
-# or copy into the container
+# or copy from the local directory into the container
 
 docker compose cp ./eventconf.xml:horizon:/usr/share/opennms/etc/
 ```
+
+## Reloading configurations
 
 Normally, configuration changes will be read when the system restarts however for a number of daemons, a daemon reload event can be sent which will restart the daemon in a running system. 
 
