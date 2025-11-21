@@ -29,18 +29,18 @@ However remember to reload the configuration as described below after editing it
 
 ---
 
-The netsnmp containers already have the [vi editor](https://devhints.io/vim) installed but and you can use this if you wish
+The OpenNMS containers already have the [vi editor](https://devhints.io/vim) installed and you can use this if you wish.
 
 However we can make our lives a bit simpler if we also install the [nano editor](https://www.nano-editor.org/dist/latest/nano.html) because it is easier to use.
 
-(Note you may also need to change the background colour of the powershell to black to see all of the characters when editing xml markup. Use Powershell>properties>colors>screen background)
+(Note you may also need to change the background colour of the powershell to black to see all of the characters when editing xml markup. Use `Powershell>properties>colors>screen background`)
 
 ```
 # log into the opennms horizon container as the root user
 docker compose exec -u root horizon bash
 
-# install nano
-root@horizon:/usr/share/opennms# apt-get install -y nano
+# install nano 
+root@horizon:/usr/share/opennms# microdnf -y install nano
 
 # exit as root user 
 root@horizon:/usr/share/opennms# exit
