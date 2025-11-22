@@ -99,19 +99,27 @@ You will also notice that many of the projects in this repo have a .gitignore fi
 This tells git to ignore certain directories or files when committing changes.
 .gitignore files inherit from .gitignore files further up the class path. This allows you to have a generic .gitignore and a more specific one in a nested folder to specify project specific files you don't want to check in in. 
 
-It is VERY important to ensure that, in particular 'target', directories are NOT checked into git as this would fill your repository up with unnecessary class and jar files.
+It is VERY important to ensure that, in particular maven `target`, directories are NOT checked into git as this would fill your repository up with unnecessary class and jar files.
 
 You should also ensure that in most cases IDE specific sub folders and files are not checked in to git as this will cause confusion if you change or upgrade your IDE. Your ide will read the maven pom.xml file and recreate these folders locally if necessary.
 
 The example [.gitignore](../main/.gitignore)  should be suitable for most purposes and should be copied into the top level of your git repository.
 
-### Syncing with the upstream repo
+### Syncing with the upstream repo using GitHub UI
 I will be adding stuff to the upstream repo each session and you should be able to pull these into your local repo using the procedure described below.
 
-PLEASE DO NOT CHANGE ANYTHING IN YOUR LOCAL REPO EXCEPT IN myPracticeCourseWork.
+PLEASE DO NOT CHANGE ANYTHING IN YOUR LOCAL REPO EXCEPT IN `myPracticeCourseWork`.
  this will allow merges to go smoothly.
 
-you can see which remote repositories are referenced in your local repo using
+The simplest way to merge any changes from my upstream repository to your fork is to use the `synchronize fork` button if it appears on your forked repo. 
+Be very careful not to choose the option which discards your changes but choose the synchronize option which merges the upstream files.
+This should work smoothly provided you have made only made change in `myPracticeCourseWork`.
+
+![alt text](../main/docs/images/syncFork.png "Figure syncFork.png")
+
+### Syncing with the upstream repo using git commands in your repo
+
+You can see which remote repositories are referenced in your local repo using
 ```
 $ git remote -v
 origin  https://github.com/{ your github id}/opennms-tutorials-1.git (fetch)
@@ -128,7 +136,7 @@ To sync with the upstream repo you need to add another remote repository
 ```
 $ git remote add upstream https://github.com/gallenc/opennms-tutorials-1.git
 ```
-NOTE even if you are using SSH to acces your repo, use https to access the upstream repo because you do not need a password or certificates to pull a public repo.
+NOTE even if you are using SSH to access your repo, use https to access the upstream repo because you do not need a password or certificates to pull a public repo.
 
 To see the upstream repositories use
 ```
