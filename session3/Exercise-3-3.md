@@ -15,11 +15,11 @@ In this example we will import this MIB into OpenNMS and create camera alarms.
 **_NOTE:_** Disclaimer: This exercise is provided as a training example. The CHUBB MIBs used may not be the latest specified by the manufacturer.
 
 ## Getting started
-In this example we will use the same network as we used in [Session 2](../session2/README.md). 
+In this example we will use the same network as we used in [Exercise-3-2](../session3/Exercise-3-2.md).
 
 However we want to start with a clean system because instead of creating the configuration files inside the container, we will inject them using docker. 
 
-Use the new [session3/minimal-minion-activemq](../session3/minimal-minion-activemq/) project.
+Use the [session3/minimal-minion-activemq](../session3/minimal-minion-activemq/) project.
 
 (Note you should be copying this session into your myPracticeCourseWork folder if you want to keep a forked copy of your work). 
 
