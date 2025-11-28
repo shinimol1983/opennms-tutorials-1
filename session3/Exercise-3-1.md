@@ -45,14 +45,15 @@ When you select operations > walk and then GO, you should see output like this i
 
 Note the line `Name/OID: sysObjectID.0; Value (OID): .1.3.6.1.4.1.8072.3.2.10`
 
-The sysObjectID will be different for every vendor and device and it is assigned to organisations by IANA.
+The sysObjectID will be different for every vendor with the fields after the vendor id used to specify the vendors device.
+The vendor id is assigned to organisations by IANA.
 You can search a list of susObjectID mappings per vendor here [https://www.iana.org/assignments/enterprise-numbers/](https://www.iana.org/assignments/enterprise-numbers/)
 
 The sysObjectID is the primary means by which OpenNMS knows what sort of device it is and therefore what MIBS are available to collect data from.
 
 `8072` is the registered sysObjectID for NetSNMP. 
 
-`5813` is the registered sysObjectID for The OpenNMS Group, Inc.  (this is often used when OpenNMS forwards traps to other systems)
+`5813` is the registered sysObjectID for The OpenNMS Group, Inc.  (This is sometimes used when OpenNMS forwards traps to other systems)
 
 Try walking the other containers by using a different port.
 Note that you will need to use community string `chubb` for chubb_camera_01
