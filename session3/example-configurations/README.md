@@ -15,8 +15,8 @@ To load into the running container do the following
 
 ```
 cd minimal-minion-activemq
-docker compose cp ./example-configurations/events-generated-from-mib/eventconf.xml horizon:/usr/share/opennms/etc/
-docker compose cp ./example-configurations/events-generated-from-mib/CHUBB-TVBS-CAMERA-MIB.events.xml horizon:/usr/share/opennms/etc/events/
+docker compose cp ../example-configurations/events-generated-from-mib/eventconf.xml horizon:/usr/share/opennms/etc/
+docker compose cp ../example-configurations/events-generated-from-mib/CHUBB-TVBS-CAMERA-MIB.events.xml horizon:/usr/share/opennms/etc/events/
 
 # send an event to reload the daemon
 docker compose exec horizon /usr/share/opennms/bin/send-event.pl uei.opennms.org/internal/reloadDaemonConfig -p 'daemonName Eventd' 
@@ -44,8 +44,8 @@ To load into the running container do the following
 
 ```
 cd minimal-minion-activemq
-docker compose cp ./example-configurations/simple-alarms-from-mib/eventconf.xml horizon:/usr/share/opennms/etc/
-docker compose cp ./example-configurations/simple-alarms-from-mib/CHUBB-TVBS-CAMERA-MIB.events.xml horizon:/usr/share/opennms/etc/events/
+docker compose cp ../example-configurations/simple-alarms-from-mib/eventconf.xml horizon:/usr/share/opennms/etc/
+docker compose cp ../example-configurations/simple-alarms-from-mib/CHUBB-TVBS-CAMERA-MIB.events.xml horizon:/usr/share/opennms/etc/events/
 
 # send an event to reload the daemon
 docker compose exec horizon /usr/share/opennms/bin/send-event.pl uei.opennms.org/internal/reloadDaemonConfig -p 'daemonName Eventd' 
@@ -74,8 +74,8 @@ To load into the running container do the following
 
 ```
 cd minimal-minion-activemq
-docker compose cp ./example-configurations/full-alarms-from-mib/eventconf.xml horizon:/usr/share/opennms/etc/
-docker compose cp ./example-configurations/full-alarms-from-mib/CHUBB-TVBS-CAMERA-MIB.events.xml horizon:/usr/share/opennms/etc/events/
+docker compose cp ../example-configurations/full-alarms-from-mib/eventconf.xml horizon:/usr/share/opennms/etc/
+docker compose cp ../example-configurations/full-alarms-from-mib/CHUBB-TVBS-CAMERA-MIB.events.xml horizon:/usr/share/opennms/etc/events/
 
 # send an event to reload the daemon
 docker compose exec horizon /usr/share/opennms/bin/send-event.pl uei.opennms.org/internal/reloadDaemonConfig -p 'daemonName Eventd' 
