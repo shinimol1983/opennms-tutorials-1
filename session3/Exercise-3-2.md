@@ -170,7 +170,7 @@ You will also see a corresponding WARNING alarm with an event count of each rais
 
 ![alt text](../session3/images/reloadEvents.png "Figure reloadEvents.png")
 
-## how does the event definition work
+## How does the event definition work?
 
 We have created an event configuration for two events which also create and clear an alarm.
 
