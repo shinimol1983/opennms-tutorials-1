@@ -51,6 +51,14 @@ The easiest way to get these packages is to install [docker-desktop](https://www
 All of these examples have been tried on [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on Windows 11.
 They should also work on Docker installed in linux  (e.g. Ubuntu 22 running in VirtualBox).
 
+---
+**NOTE**
+
+When running the examples in [docker directly on Windows System for Linux (WSL)](https://daniel.es/blog/how-to-install-docker-in-wsl-without-docker-desktop/) rather than on  [Docker Desktop](https://www.docker.com/products/docker-desktop/), some problems have been reported when using mibbrowser to snmp walk or send snmp traps to docker containers from the host PC. 
+If this is the case, you can still generate traps or do snmp walks using the Netsnmp methods described in the tutorials.
+
+---
+
 The following software is also needed:
 
 [Git for windows](https://git-scm.com/download/win)
