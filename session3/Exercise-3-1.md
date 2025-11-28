@@ -97,7 +97,7 @@ You should also see that the corresponding alarm in the alarm list is now CLEARE
 
 We will return to the LinkDown trap in a future exercise but now we want to see how we can deal with a new trap which OpenNMS does not know about.
 
-## generating an unknown trap using mibbrowser
+## Generating an unknown trap using mibbrowser
 
 In the Mibbrowser, we need to define and send a trap using the following configuration.
 
