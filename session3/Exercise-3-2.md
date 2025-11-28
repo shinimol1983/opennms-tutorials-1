@@ -55,7 +55,7 @@ docker compose exec horizon bash
 # edit the eventconf.xml file
 nano etc/eventconf.xml
 ```
-You can now paste the following event definitions into the file between the end of the `</global>` definition and the first `<event-file>` in the list
+You can now paste the following event definitions into the `eventconf.xml` file between the end of the `</global>` definition and the first `<event-file>` in the list
 
 ```
    ...
@@ -125,7 +125,7 @@ You can now paste the following event definitions into the file between the end 
    <event-file>events/opennms.snmp.trap.translator.events.xml</event-file>
    ... 
 ```
-Save eventconf.xml and exit the editor.
+Save `eventconf.xml` and exit the editor.
 
 There is a pearl command in the `bin` directory to directly send events into OpenNMS.
 We can use this to send an event into OpenNMS to force a reload the new event configuration without restarting OpenNMS.
