@@ -238,8 +238,6 @@ When an `alarm-type="2"` event is received, the corresponding alarm is cleared a
 
 Note that a subtle change in alarm behaviour can be set by overriding properties in the [etc/opennms.properties](../../main/pristine-opennms-config-files/etc-pristine/opennms.properties)  file.
 
-On our examples these properties are overridden by properties files placed in the [etc/opennms.properties.d](../session3/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/opennms.properties.d) directory.
-
 ```
 ###### Alarmd Properties ######
 #
@@ -280,6 +278,9 @@ We can also change how alarms are displayed and generate a sound on alarm update
 # opennms.alarmlist.unackflash=false
 
 ```
+
+On our examples these properties are overridden by properties files placed in the [etc/opennms.properties.d](../session3/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/opennms.properties.d) directory.
+You can edit these files and restart the example to see the effect of each property.
 
 ## Summary
 You can see that an important part of designing an event configuration is deciding which events raise alarms and which events clear them.
