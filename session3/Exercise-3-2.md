@@ -213,10 +213,11 @@ You will see that the `example trap definition 1 RAISE` event also contains an `
       <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
 ```
 
-Event definitions which RAISE alarms are defined as alarm-type="1"
+Event definitions which RAISE alarms are defined as `alarm-type="1"`
 
 The `reduction-key` is designed to match the unique instance of this alarm.
 This matches the alarms UEI and also the distribted poller name  - which broadly corresponds to the minion or core instance receiving the trap and the nodeid which is the unique identifier of the node. 
+
 Whenever a trap matching the mask and varbinds is first received, a new alarm is created.
 Subsequent matching taps will just increase the event count on the alarm but will not create a new alarm.
 
@@ -231,11 +232,13 @@ You will see that the `example trap definition 1 CLEAR` event  contains a more c
                   auto-clean="false"/>
 ```
 
-Event definitions which CLEAR alarms are defined as alarm-type="2" and also include a `clear-key` which you will see is designed to match the reduction-key of the event which initially raised the alarm.
+Event definitions which CLEAR alarms are defined as `alarm-type="2"` and also include a `clear-key` which you will see is designed to match the `reduction-key` of the event which initially raised the alarm.
 
-When an alarm-type="2" event is received, the corresponding alarm is cleared and eventually within a few minutes removed from the alarm list.
+When an `alarm-type="2"` event is received, the corresponding alarm is cleared and eventually within a few minutes deleted from the alarm list.
 
 Note that a subtle change in alarm behaviour can be set by overriding properties in the [etc/opennms.properties](../../main/pristine-opennms-config-files/etc-pristine/opennms.properties)  file.
+
+On our examples these properties are overridden by properties files placed in the [etc/opennms.properties.d](../minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/opennms.properties.d) directory.
 
 ```
 ###### Alarmd Properties ######
