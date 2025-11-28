@@ -187,7 +187,7 @@ To send SNMP v2 taps, the  command format is
 
 snmptrap [OPTIONS] AGENT TRAP-PARAMETERS
 
-The trap parameters are also called `varbinds` and each consists of the fields `oid` `type` `value`  where the type of the data can vary but we are using 'i' integer or 's ' string
+The trap parameters are also called `varbinds` and each consists of the fields `oid` `type` `value`  where the type of the data can vary but we are using `'i' integer ` or `'s ' string`
 
 (for other possible types see [NetSNMP snmpset documentation](http://www.net-snmp.org/wiki/index.php/TUT:snmpset) `i: INTEGER, u: unsigned INTEGER, t: TIMETICKS, a: IPADDRESS, o: OBJID, s: STRING, x: HEX STRING, d: DECIMAL STRING`).
 
