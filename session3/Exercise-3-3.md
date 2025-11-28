@@ -139,6 +139,12 @@ Perl is not installed in opennms containers but curl can be used instead (substi
 ```
 curl -X POST http://localhost:8980/opennms/rest/events -H 'Content-Type: application/json' -d '{"uei": "uei.opennms.org/internal/reloadDaemonConfig", "severity": "NORMAL", "parms": [{"parmName": "daemonName", "value": "Eventd" }] }' --user admin:admin
 ```
+It is also possible to reload the `Eventd` daemon from the `Karaf Shell` using:
+```
+docker compose exec horizon bash   # to run ssh consol if you dont have SSH on your windows machine
+
+ssh admin@localhost -o UserKnownHostsFile=/dev/null -p 8101 reload-daemon Eventd
+```
 
 You will see a reloadDaemonConfigSuccessful event in the event list
 
