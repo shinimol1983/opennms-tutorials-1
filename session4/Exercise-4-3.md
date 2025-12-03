@@ -3,3 +3,5 @@
 # Exercise 4-3 
 
 Drools Rules
+
+[Drools Example](../session4/EventTranslator/minimal-minion-activemq/container-fs/horizon/opt/drools-correlation).
