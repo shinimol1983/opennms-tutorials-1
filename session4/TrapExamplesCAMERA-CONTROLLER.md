@@ -6,6 +6,8 @@ In this case the traps contain an additional FIRST varbind cameraIdentifier oid 
 
 The remaining varbinds are the same as in the CHUBB-TVBS-CAMERA-MIB
 
+I have included a comment at the end of each trap definition so that it is easy to see which traps have been sent from the terminal history
+
 
 ## Health Change notification
 
@@ -27,133 +29,133 @@ values:  INTEGER {clear(0), triggered(1) }
 
 #### panMotor raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 0  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 0  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # panMotor raise
 ```
 
 #### panMotor clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 0  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 0  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # panMotor clear
 ```
 
 #### tiltMotor raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 1  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 1  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # tiltMotor raise
 ```
 
 #### tiltMotor clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 1  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 1  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # tiltMotor clear
 ```
 
 #### zoomMotor raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 2  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 2  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # zoomMotor raise
 ```
 
 #### zoomMotor clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 2  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 2  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # zoomMotor clear
 ```
 
 #### apertureMotor raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 3  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 3  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # apertureMotor raise
 ```
 
 #### apertureMotor clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 3  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 3  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # apertureMotor clear
 ```
 
 #### focusMotor raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 4  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 4  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # focusMotor raise
 ```
 
 #### focusMotor clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 4  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 4  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # focusMotor clear
 ```
 
 #### wiperMotor raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 5  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 5  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # wiperMotor raise
 ```
 
 #### wiperMotor clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 5  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 5  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # wiperMotor clear
 ```
 
 #### heater raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 6  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 6  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # heater raise
 ```
 #### heater clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 6  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 6  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # heater clear
 ```
 
 #### fluidLevel raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 7  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 7  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # fluidLevel raise
 ```
 #### fluidlevel clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 7 .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 7 .1.3.6.1.4.1.52330.6.2.5.0 i 0    # fluidlevel clear
 ```
 
 #### videoSignal raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 8  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 8  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # videoSignal raise
 ```
 
 #### videoSignal clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 8  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 8  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # videoSignal clear
 ```
 
 #### housingTamper raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 9  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 9  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # housingTamper raise
 ```
 
 #### housingTamper clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 9  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 9  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # housingTamper clear
 ```
 
 
 #### washerMotorFault raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 10  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 10  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # washerMotorFault raise
 ```
 
 #### washerMotorFault clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 10  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 10  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # washerMotorFault clear
 ```
  
 
 #### configPlugFault raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 11  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 11  .1.3.6.1.4.1.52330.6.2.5.0 i 1     # configPlugFault raise
 ```
 
 #### configPlugFault clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 11  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 11  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # configPlugFault clear
 ```
 
 
 #### tvbuCameraFault raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 12  .1.3.6.1.4.1.52330.6.2.5.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 12  .1.3.6.1.4.1.52330.6.2.5.0 i 1    # tvbuCameraFault raise
 ```
 
 #### tvbuCameraFault clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 12  .1.3.6.1.4.1.52330.6.2.5.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.1        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.1.0 i 12  .1.3.6.1.4.1.52330.6.2.5.0 i 0    # tvbuCameraFault clear
 ```
 
 ## Tamper Detected notification
@@ -172,12 +174,12 @@ values:  INTEGER {clear(0), triggered(1) }
 
 #### tamperDetected raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.2        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.2.0 i 1
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.2        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.2.0 i 1    # tamperDetected raise
 ```
 
 #### tamperDetected clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.2        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.2.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.2        .1.3.6.1.4.1.52330.6.2.7.0 s camera_008   .1.3.6.1.4.1.52330.6.2.2.0 i 0    # tamperDetected clear
 ```
 
 ## Logic Input Change notification
@@ -200,12 +202,12 @@ Note that in this case there is only one alarm definition but different alarms a
 
 #### logicInputChange raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.3       .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.3.0  i 0  .1.3.6.1.4.1.52330.6.2.4.0 i 0
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.3       .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.3.0  i 0  .1.3.6.1.4.1.52330.6.2.4.0 i 0    # logicInputChange raise
 ```
 
 #### logicInputChange clear
 ```
-ssnmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.3       .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.3.0  i 0  .1.3.6.1.4.1.52330.6.2.4.0 i 1
+ssnmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.3       .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.3.0  i 0  .1.3.6.1.4.1.52330.6.2.4.0 i 1    # logicInputChange clear
 ```
 
 ## Comms State Change notification
@@ -226,11 +228,11 @@ Note that in this case there is only one alarm definition but different alarms a
 
 #### commsStateChange  raise
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.4      .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.6  i 1  
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.4      .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.6  i 1     # commsStateChange  raise 
 ```
 
-#### lcommsStateChange  clear
+#### commsStateChange  clear
 ```
-snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.4       .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.6  i 0  
+snmptrap -v 2c -c public horizon:1162 ""  .1.3.6.1.4.1.52330.6.2.0.4       .1.3.6.1.4.1.52330.6.2.7.0  s camera_008   .1.3.6.1.4.1.52330.6.2.6  i 0     # commsStateChange  clear
 ```
 
