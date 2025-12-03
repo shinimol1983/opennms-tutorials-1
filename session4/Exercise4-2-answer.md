@@ -1,11 +1,11 @@
-# Exercise 4-1 Answer
+[Main Menu](../README.md) | [Session 4](../session4/README.md) | [Exercise-4-2 Answer](../session4/Exercise4-2-answer.md)
 
-[Main Menu](../README.md) | [Session 4](../session4/README.md) | [Exercise-4-1 Answer](../session4/Exercise4-1-answer.md)
+# Exercise 4-2 Answer
 
-This is the answer to [Exercise-4-1](../session4/Exercise-4-1.md)
+This is the answer to [Exercise-4-2](../session4/Exercise-4-2.md)
 
 The example below only shows translations for two of the events.
-[two events translator-configuration.xml](../session4/Exercise4-1-answer/simple-answer/translator-configuration.xml)
+[two events translator-configuration.xml](../session4/Exercise4-2-answer/simple-answer/translator-configuration.xml)
 
 You can see we are extracting the varbind parameter named `.1.3.6.1.4.1.52330.6.2.7.0`.
 There is no need for a regular expression because the name of the varbind never changes with the value it represents.
@@ -40,7 +40,7 @@ The SQL search uses this value to find the node so that the new event has the co
       
 ```
 
-A complete answer is here with all of the event translations : [all events translator-configuration.xml](../session4/Exercise4-1-answer/all-events-answer/translator-configuration.xml)
+A complete answer is here with all of the event translations : [all events translator-configuration.xml](../session4/Exercise4-2-answer/all-events-answer/translator-configuration.xml)
 
 ---
 **NOTE**
