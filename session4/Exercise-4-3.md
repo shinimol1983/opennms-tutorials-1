@@ -4,4 +4,4 @@
 
 Drools Rules
 
-[Drools Example](../session4/EventTranslator/minimal-minion-activemq/container-fs/horizon/opt/drools-correlation).
+[Drools Example](../session4/drools-correlation/minimal-minion-activemq/).
