@@ -152,7 +152,7 @@ On the alarm list, you will see all the `alarms` and the `situation` listed:
 
 ![alt text](../session4/images/alarmlistwithsituation1.png "Figure alarmlistwithsituation1.png ")
 
-And the details of the `situation` will also list the `related alarms` which are linked to the `situation` and also the events which have created and/or changed the `situation`.
+And the details of the `situation` will also list the `related alarms` which are linked to the `situation` and also the `situation events` which have created and/or changed the `situation`.
 
 ![alt text](../session4/images/alarmlistwithsituation2.png "Figure alarmlistwithsituation2.png ")
 
