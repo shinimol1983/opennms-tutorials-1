@@ -97,12 +97,12 @@ rule "insert uei group map"
         euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/configPlugFault-clear","group2");
         euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChange/tvbuCameraCommsFault","group3");
         euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear/tvbuCameraCommsFault-clear","group3");
-        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear","group-undefined");
-        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/tamperDetectedCleared","group-undefined");
-        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChange","group-undefined");
-        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChangeCleared","group-undefined");
-        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChange","group-undefined");
-        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChangeClear","group-undefined");
+        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/healthChangeClear","group1");
+        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/tamperDetectedCleared","group1");
+        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChange","group1");
+        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/logicInputChangeCleared","group1");
+        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChange","group1");
+        euiGroupMap.put("uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChangeClear","group1");
         
         groupMap.setEuiGroupMap(euiGroupMap);
         
