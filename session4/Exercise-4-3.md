@@ -46,6 +46,7 @@ The grouping of alarm uei's is listed in the table below.
 | uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChange| group1 |
 | uei.opennms.org/traps/CHUBB-TVBS-CAMERA-MIB/commsStateChangeClear| group1 |
 
+## Business Service Monitor - possible solution
 Now you should realise that it would possible to do this using the `Business Service Monitor` to define a business service alarm for all of the possible reduction keys in each group for each camera. 
 An example of one group5 alarm is shown below
 
@@ -57,6 +58,8 @@ This shows up in the topology like so.
 The problem with this approach is that, while alarm grouping is possible, you need to build a configuration for every camera which quickly becomes unwieldy and error prone.
 
 An alternative approach is to build a business rules configuration which can be extended to any number of cameras.
+
+## Drools Rules Solution
 
 Before proceeding to [Exercise-4-3](../session4/Exercise-4-3.md), shutdown and clear the database for the EventTranslator project.
 ```
