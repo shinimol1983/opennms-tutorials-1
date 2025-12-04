@@ -74,15 +74,14 @@ select * from node where nodelabel = 'localhost';
 Have a look at the events table
 
 ```
-select * from alarms;
+select * from events;
 ```
 
 and the alarms table
 
 ```
-select * from events;
+select * from alarms;
 ```
-
 Note that in OpenNMS, most of the model objects (Entities) are backed by a database table (although some objects are created from table joins).
 
 Most model class names begin with `Onms...` e.g. `OnmsAlarm.java`.
