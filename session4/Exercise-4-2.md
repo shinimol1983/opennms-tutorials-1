@@ -42,11 +42,13 @@ The camera nodes are themselves not monitored by OpenNMS and do not have any int
 
 Each camera has a unique `cameraIdentifier` to identify it in the `camera-controller` and on OpenNMS.
 
-The traps sent from the `camera-controller` follow exactly the same pattern as the traps in the previous exercise but they all have an extra string varbind which contains the cameraIdentifier.
+The traps sent from the `camera-controller` follow exactly the same pattern as the traps in the previous exercise but they all have an extra string varbind which contains the `cameraIdentifier`.
 
 Example traps are provided for camera_008 in [CAMERA-CONTROLLER Trap Examples](../session4/TrapExamplesCAMERA-CONTROLLER.md)
 
-These traps match the event configuration here [etc/events/CAMERA-CONTROLLER-MIB.events.xml](../session4/EventTranslator/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/events/CAMERA-CONTROLLER-MIB.events.xml) 
+The traps now have an additional `cameraIdentifier` varbind identified by the `oid`, `.1.3.6.1.4.1.52330.6.2.7.0` and containing the camera name in text  (e.g. `camera_008 `).
+
+These new traps match the OpenNMS event configuration defined in [etc/events/CAMERA-CONTROLLER-MIB.events.xml](../session4/EventTranslator/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/events/CAMERA-CONTROLLER-MIB.events.xml) 
 
 You need to design an event translator configuration which will translate the events from these new traps into similar events to those defined in [Exercise 3.1](../session3/Exercise-3-1.md) but with the correct `nodeid` corresponding to the `cameraIdentifier` in the traps.
 
