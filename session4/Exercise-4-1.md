@@ -120,7 +120,7 @@ The unmodified [translator-configuration.xml](../pristine-opennms-config-files/e
 We will consider the `Improved LinkDown/LinkUp events` translator definition which improves the SNMP link events.
 
 By themselves SNMP link traps only tell us the `ifIndex` of the interface which has gone down.
-The name and type of this interface is not supplied in the trap.
+The name and type of this interface is not supplied in the trap varbinds.
 However the name of the interface (`eth0` `eth1` etc) is very useful to the user.
 
 OpenNMS regularly scans the `ifTable` of a device and will already have the additional information for a given `ifIndex` so we need to extract the `ifIndex` from the trap and look up the additional information in the interface table before adding it into the event which the user will see.
@@ -129,7 +129,7 @@ You will see from the following mib browser walk if the trap has given us the `i
 
 ![alt text](../session4/images/ifindex.png "Figure ifindex.png")
 
-The definition which turns an SNMP `LinkDown` trap into an event is in the file [etc/events/opennms.snmp.trap.translator.events.xml](../pristine-opennms-config-files/etc-pristine/events/opennms.snmp.trap.translator.events.xml).
+The event configuration which turns an SNMP `LinkDown` trap into an event is `ei.opennms.org/generic/traps/SNMP_Link_Down`
 
 ```
    <event>
@@ -154,22 +154,45 @@ The definition which turns an SNMP `LinkDown` trap into an event is in the file 
       <!-- <alarm-data reduction-key="%uei%:%dpname%:%nodeid%:%interface%" alarm-type="1" /> -->
    </event>
 ```
-
 This generates an event from the SNMP link down trap with the uei `uei.opennms.org/generic/traps/SNMP_Link_Down`. 
 The Event Translator should listen for this event.
 
 Note that `<logmsg dest="donotpersist">` means that this event is never persisted to the database so we should only ever see the new event from the translator and not this original one.
 
+We want to translate this into a more useful event definition `uei.opennms.org/translator/traps/SNMP_Link_Down`
+In the translated event we need to create `IfDescr`, `IfName` and `ifAlias` parameters.
+```
+   <event>
+      <uei>uei.opennms.org/translator/traps/SNMP_Link_Down</uei>
+      <event-label>Translator Enriched LinkDown Event</event-label>
+      <descr>&lt;p>A linkDown trap signifies that the sending protocol entity recognizes a failure in one of the
+            communication link represented in the agent's configuration. &lt;/p>
+            &lt;p>Instance: %parm[#1]% &lt;/p>
+            &lt;p>IfDescr: %parm[ifDescr]% &lt;/p>
+            &lt;p>IfName: %parm[ifName]% &lt;/p>
+            &lt;p>IfAlias: %parm[ifAlias]% &lt;/p></descr>
+      <logmsg dest="logndisplay">Agent Interface Down (linkDown Trap)
+        </logmsg>
+      <severity>Minor</severity>
+       <!-- reduce alarms from traps and polls into a single alarm -->
+       <alarm-data reduction-key="uei.opennms.org/nodes/snmp/interfaceOperDown:%dpname%:%nodeid%:%parm[#1]%" alarm-type="1" auto-clean="false">
+           <update-field field-name="severity" update-on-reduction="true"/>
+       </alarm-data>
+   </event>
+
+```
+(Both these event definitions are in the file [etc/events/opennms.snmp.trap.translator.events.xml](../pristine-opennms-config-files/etc-pristine/events/opennms.snmp.trap.translator.events.xml)).
+
 All of the SNMP trap varbinds become parameters in an event and we will look at these parameters in the translator.
 
-Remember that OpenNMS events only usually care about the position of a varbind, not its name. 
+Remember that OpenNMS event definitions only usually care about the position of a varbind, not its name. 
 But in this case the oid name of a varbind is very important as the name changes with the ifIndex.
 
 The link up and down events from devices are a bit complicated for users to interpret, particularly since the `ifIndex` of a port can move around depending on the configuration of the device. 
 
 The SNMP trap definition for a link down event will always have a varbind parameter named after the oid of the `ifIndex` of the link which has gone down.
 
-So we are looking for a parameter (varbind) with the name `.1.3.6.1.2.1.2.2.1.1.IFINDEX` where `IFINDEX` is the number of the interface and will tell us which row in the OpenNMS interface table we are looking for.
+So we are looking for a parameter (varbind) with the name `.1.3.6.1.2.1.2.2.1.1.IFINDEX` where `IFINDEX` is the number of the interface that will tell us which row in the OpenNMS interface table we are looking for.
 
 The following excerpt from [translator-configuration.xml](../pristine-opennms-config-files/etc-pristine/translator-configuration.xml) shows how this event is processed.
 
@@ -215,6 +238,7 @@ This shows how the `uei.opennms.org/generic/traps/SNMP_Link_Down` event is enric
       
     </event-translation-spec>
 ```
+We will now break this configuration down into its constituant parts.
 
 `<event-translation-spec uei="uei.opennms.org/generic/traps/SNMP_Link_Down">` specifies that this translation runs every time an event with a uei `uei.opennms.org/generic/traps/SNMP_Link_Down` occurs.
 
