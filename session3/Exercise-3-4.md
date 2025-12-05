@@ -102,7 +102,7 @@ The restored state events should be set to `Normal`.
 
 Test your events once you have made the changes.
 
-## Step 3 Add a reduction key to the alarm triggeing events
+## Step 3 Add a reduction key to the alarm triggering events
 
 For all of the raise events, turn them into type 1 alarms by adding a reduction key
 
