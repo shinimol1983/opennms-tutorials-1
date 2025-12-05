@@ -190,23 +190,25 @@ end
 In OpenNMS `situations` are just `alarms` with some extra parameters.
 
 Alarms are represented as situations if they contain one or more parameters (param) with a name starting with `related-reductionKey`.
-Multiple `related-reductionKey` parameters are allowed if each parameter has a unique string after the `related-reductionKey` name e.g `related-reductionKey--401735179`.
 
-The`related-reductionKey` param contains the reduction key of an alarm associated with this situation.
+Each `related-reductionKey` param contains the reduction key of an `alarm` associated with this `situation`.
+The reduction key is used by OpenNMS to look up and display the `alarm` in a list of alarms associated with the `situation`.
+
+Multiple `related-reductionKey` parameters are allowed if each parameter has a unique string after the `related-reductionKey` name e.g `related-reductionKey--401735179`.
 
 Events can be used to create and update situations if they contain `related-reductionKey` params.
 
-In our example, we are using events defined in [etc/events/opennms.alarm.drools.situation.events.xml](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/events/opennms.alarm.drools.situation.events.xml) to create and display our situations.n
+In our example, we are using events defined in [etc/events/opennms.alarm.drools.situation.events.xml](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/events/opennms.alarm.drools.situation.events.xml) to create and display our situations.
 
 You will get more insight into how this works by looking at the `isRelatedReductionKeyWithContent(Parm param)` method in [AlarmPersisterImpl.java](https://github.com/OpenNMS/opennms/blob/opennms-33.1.8-1/opennms-alarms/daemon/src/main/java/org/opennms/netmgt/alarmd/AlarmPersisterImpl.java)
-This code is used to match the related alarm reduction keys and mark this alarm as a situation.
+This code is used to match the related alarm reduction keys and mark an alarm as a situation.
 
 The rules designed for this specific example are in the file [etc/drools-rules.d/chubb-rules.drl](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/alarmd/drools-rules.d/chubb-rules.drl)
-The first rule in the file iss
+
+The first rule in the file is
 ```
 rule "insert uei group map" 
 ```
-
 You will see this rule runs once at start up and inserts a fact representing a hash map associating individual UEI's with particular groups
 
 The next rule is 
@@ -214,10 +216,10 @@ The next rule is
 rule "suppress camera controller alarms"
 ```
 
-The present Event Translator definitions in [etc/translator-configuration.xml](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/translator-configuration.xml) reuse the existing event definitions when they create a new event. 
+As discussed previously, the Event Translator definitions in [etc/translator-configuration.xml](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/translator-configuration.xml) reuse the existing event definitions when they create a new event. 
 
 This means that we will see the old event against the `camera-controller` along side the new event for the `camera`.
-We want to remove the original`camera-controller` events and this rule automatically clears them once they are created.
+We want to remove the original `camera-controller` events and this rule automatically clears them once they are created.
 
 If we had defined new translated events in the event translator using the `url` parameter and used `donotpersist` for the original events, there would be no need for this rule.
 
@@ -225,19 +227,21 @@ The rule which creates group situations for multiple events is
 ```
 rule "group mapping situation"
 ```
+This rule creates a new `situation` and/or associates `alarms` to an existing `situation` using drools situation update events `<uei>uei.opennms.org/alarms/drools/situation</uei>` defined in 
+[etc/events/opennms.alarm.drools.situation.events.xml](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/events/opennms.alarm.drools.situation.events.xml)
 
-This rule use a number of pre-defined functions at the bottom of the file.
+This rule looks for alarms which match the uei group map and checks to see if any group situations already exist to which this alarm should be attached.
 
-This rule looks for alarms which match the uei group map and checks to see if any group situations exist for each alarm.
+If a group situation does not exist, it is created and the alarm is added to it.
 
-If a situation does not exist, it is created and the alarm is added to it.
-
-If a situation does exist which should have this alarm, it is added to the existing situation.
+If a situation does exist which should have this alarm, the alarm is added to the existing situation.
 
 Situations automatically clear if all their associated alarms are cleared.
 
-This rule creates new situations and associates alarms to the situation using drools situation update events `<uei>uei.opennms.org/alarms/drools/situation</uei>` defined in 
-[etc/events/opennms.alarm.drools.situation.events.xml](../session4/drools-correlation/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/events/opennms.alarm.drools.situation.events.xml)
+This rule uses a number of pre-defined java methods at the bottom of the file.
+
+
+
 
 
 
