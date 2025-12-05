@@ -52,7 +52,7 @@ These new traps match the OpenNMS event configuration defined in [etc/events/CAM
 
 You need to design an event translator configuration which will translate the events from these new traps into similar events to those defined in [Exercise 3.1](../session3/Exercise-3-1.md) but with the correct `nodeid` corresponding to the `cameraIdentifier` in the traps.
 
-A starting point is provided here [etc/translator-configuration.xml](../session4/EventTranslator/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/translator-configuration.xml) 
+A starting point is provided here [etc/translator-configuration.xml](../session4/EventTranslator/minimal-minion-activemq/container-fs/horizon/opt/opennms-overlay/etc/translator-configuration.xml).
 This is based upon the standard translations included with OpenNMS. 
 
 We need to translate each of the incoming events so that a new event is created with the correct node id. 
