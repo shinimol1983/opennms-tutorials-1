@@ -159,8 +159,10 @@ The Event Translator should listen for this event.
 
 Note that `<logmsg dest="donotpersist">` means that this event is never persisted to the database so we should only ever see the new event from the translator and not this original one.
 
-We want to translate this into a more useful event definition `uei.opennms.org/translator/traps/SNMP_Link_Down`
-In the translated event we need to create `IfDescr`, `IfName` and `ifAlias` parameters.
+We want to translate this into a more useful event definition `uei.opennms.org/translator/traps/SNMP_Link_Down`.
+
+In the translated event we need to create `IfDescr`, `IfName` and `ifAlias` parameters in order to display them with the following event definition.
+
 ```
    <event>
       <uei>uei.opennms.org/translator/traps/SNMP_Link_Down</uei>
