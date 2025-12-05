@@ -6,14 +6,21 @@ In this exercise we will translate received traps into a set of modified traps u
 
 ## Scenario
 
-Imagine that multiple cameras from the examples in [Session 3](../session3/README.md) are controlled from a single `camera-controller`. 
+In [Exercise-3-3](../session3/Exercise-3-3.md) we had multiple cameras and each camera was identified by its IP address.
+When a trap was sent from a camera, OpenNMS used the `from` IP address in the trap to determine which camera node had generate the event.
+
+Imagine now that the cameras no longer have an IP address and no longer send traps to OpenNMS.
+Instead all of the cameras are controlled from a single `camera-controller`. 
 The cameras themselves are not directly manageable from OpenNMS but the `camera-controller` monitors the cameras and will send traps to OpenNMS if it detects any problems with any of the cameras. 
 
 ![alt text](../session4/images/cameracontroller.png "Figure cameracontroller.png")
 
 The operator wishes to show the status of all the cameras on a map, so they each need to be represented as unique OpenNMS nodes which may or may not have alarms associated with them.
 However, instead of each camera sending traps directly to OpenNMS with a unique IP address associated with each camera, the `camera-controller` sends all the traps from its own IP address on behalf of the cameras it manages.
-If all the traps come from the same IP address, how will OpenNMS know which camera has an alarm?
+
+Each trap now has an additional varbind that names the camera to which the trap refers.
+
+If all the traps come from the same `camera-controller` IP address, how will OpenNMS know which camera has an alarm?
 
 The answer in this case is to use the [event translator](https://docs.opennms.com/horizon/33/operation/deep-dive/events/event-translator.html)
 
