@@ -41,6 +41,26 @@ The relationship between the SNMP data collection configuration files is illustr
 
 ![alt text](../session5/images/collectd-config.png "Figure collectd-config.png")
 
+## Graph Definitions
+
+Out of the box, OpenNMS uses RRD Tool to store performance data. 
+Historically, It also used RRD Tool to generate the graph displays on he OpenNMS UI.
+(Note that OpenNMS can also use Jrobin a java implementation of RRD Tool - but this is now depricated)
+
+With the introdction of NoSQL backends such as cassandra, it was neccesary to create a new library which could generate graphs from multiple back ends. 
+This library is called [Backshift](https://github.com/OpenNMS/backshift)
+
+For backwards compatability, [Backshift](https://github.com/OpenNMS/backshift) still uses the original RRDTool graph definitions stored in snmp-graph.properties.d
+
+These graph definitons can be a bit tricky and beyond the scope of this introductory tutorial.
+There is however, plenty of documentation for RRDTool which can help you.
+
+* [OpenNMS Ggraph Definitions](https://docs.opennms.com/horizon/33/operation/deep-dive/performance-data-collection/graphs.html)
+* [RRDTool tutorial](https://oss.oetiker.ch/rrdtool/tut/rrdtutorial.en.html)
+
+Fortunately when you compile a mib, the mib compiler generates a simple graph definiton for each of the metrics as a starting point.
+
+An alternative to the internal graphs is to use Grafana dashboards, which we will cover in a later session. 
 
 ## Exercises
 
@@ -48,5 +68,5 @@ The relationship between the SNMP data collection configuration files is illustr
 
 [Exercise-5-2](../session5/Exercise-5-2.md)  Collecting from an SNMP table.
 
-
+[Exercise-5-3](../session5/Exercise-5-3.md)  Compiling an SNMP Mib into data collection files. 
 
