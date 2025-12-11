@@ -36,6 +36,7 @@ The key files configuring SNMP data collection are in the following list.
 | [etc/collectd-configuration.xml](../../main/pristine-opennms-config-files/etc-pristine/collectd-configuration.xml)|This file configures `collectd` to set up multiple data collection packages that define filters to determine which IP addresses or node categories to collect each package from.<br>Packages can contain more than one protocol for data collection e.g SNMP, JMX, XML. Each protocol definition must reference the java class which is used to perform the collection. Each of these classes/protocols will have a different set of configuration files. |
 | [etc/datacollection-config.xml](../../main/pristine-opennms-config-files/etc-pristine/datacollection-config.xml)| This file provides the configuration for SNMP data collection. It references files in the [etc/datacollection  folder](../../main/pristine-opennms-config-files/etc-pristine/datacollection/). For instance see the file [etc/datacollection/netsnmp.xml](../../main/pristine-opennms-config-files/etc-pristine/datacollection/netsnmp.xml) |
 | [etc/xml-datacollection-config.xml](../../main/pristine-opennms-config-files/etc-pristine/xml-datacollection-config.xml)| This file is provided for information. It is not SNMP related. It provides the configuration for XML and Json data collection. It references files in the [etc/xml-datacollection  folder](../../main/pristine-opennms-config-files/etc-pristine/xml-datacollection).<BR>A similar pattern exists for other data collection protocols such as JMX |
+| [etc/snmp-graph.properties.d](../../main/pristine-opennms-config-files/etc-pristine/snmp-graph.properties.d)| This folder contains RRDTools based graph definitions used torender perforamce graphs in OpenNMS. |
 
 The relationship between the SNMP data collection configuration files is illustrated below:
 
@@ -50,7 +51,7 @@ Historically, It also used RRD Tool to generate the graph displays on he OpenNMS
 With the introdction of NoSQL backends such as cassandra, it was neccesary to create a new library which could generate graphs from multiple back ends. 
 This library is called [Backshift](https://github.com/OpenNMS/backshift)
 
-For backwards compatability, [Backshift](https://github.com/OpenNMS/backshift) still uses the original RRDTool graph definitions stored in snmp-graph.properties.d
+For backwards compatability, [Backshift](https://github.com/OpenNMS/backshift) still uses the original RRDTool graph definitions stored in [etc/snmp-graph.properties.d](../../main/pristine-opennms-config-files/etc-pristine/snmp-graph.properties.d)
 
 These graph definitons can be a bit tricky and beyond the scope of this introductory tutorial.
 There is however, plenty of documentation for RRDTool which can help you.
