@@ -58,7 +58,7 @@ Define which metrics you want to collect on which SNMP agent, in our case identi
 
 ![hr-entry.png](images/hr-entry.png)
 
-File: `etc/datacollection/exercise_5.2.xml`
+File: `etc/datacollection/exercise_5.2-group.xml`
 
 ```xml
 <datacollection-group xmlns="http://xmlns.opennms.org/xsd/config/datacollection" name="exercise_5.2-group">

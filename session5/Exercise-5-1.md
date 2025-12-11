@@ -81,12 +81,14 @@ External ports (on localhost)│ Internal addresses                             
 Grafana Web UI 3000/tcp ─────┼────│   172.20.0.26/24   ├──────┼───────│   172.20.0.103/24  ├────┼────── sysoId 8072 (Net-SNMP) 1612/udp
                              │    │                    │      │       │                    │    │
                              │    │                    │      │       │                    │    │
+                             │    │                    │      │       │                    │    │
                              │    └────────────────────┘      │       └────────────────────┘    │
                              │                                │                                 │
                              │    ┌────────────────────┐      │       ┌────────────────────┐    │
                              │    │       Minion1      │      │       │                    │    │
                              │    │   172.20.0.25/24   ├──────┘       │     linux-04       │    │
   Karaf Shell  8201/tcp ─────┼────┤                    │              │                    ├────┼────── sysoId 8072 (Net-SNMP) 1613/udp
+                             │    │                    │              │                    │    │
                              │    │                    │ N001         │                    │    │
                              │    │   172.20.2.25/24   ├──────────────┤   172.20.2.101/24  │    │
                              │    └────────────────────┘              └────────────────────┘    │
@@ -123,7 +125,7 @@ Question 3: What are the steps you take to add the load average metrics to the c
 ### Task 2: Create configuration to collect the Load average metrics
 
 - [ ] Extend the default SNMP data collection with your own MIB OIDs and your system definition.
-  * Create the configuration file `datacollection/exercise_5.1.xml`
+  * Create the configuration file `datacollection/exercise_5.1-group.xml`
   * Datacollection-group name: `exercise_5.1-group`
   * MIB object group name `<group name="exercise_5.1-loadavg"`
   * Create a system definition that matches the linux-01, linux-02 system object ID's
