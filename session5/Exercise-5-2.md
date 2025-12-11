@@ -9,7 +9,7 @@ In [Exercise-5-1](../session5/Exercise-5-1.md) we looked at extending the defaul
 
 In this exercise we will look at storing data from an SNMP table and also how to define a new data collection package different from the default package.
 
-Many SNMP measurements are exposed as tables, where the user recognisable name of a value may be in one column, while the actual value may be in another column of the same line entry in the table.
+Many SNMP measurements are exposed as tables, where the user recognisable name of a value may be in one column, while the actual value may be in another column of the same line (row) entry in the table.
 
 For instance if we do an SNMP walk of the hrStorage table (oid .1.3.6.1.2.1.25.2.3) using mibbrowser, we will see the following result:
 
