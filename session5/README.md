@@ -56,7 +56,7 @@ For backwards compatability, [Backshift](https://github.com/OpenNMS/backshift) s
 These graph definitons can be a bit tricky and beyond the scope of this introductory tutorial.
 There is however, plenty of documentation for RRDTool which can help you.
 
-* [OpenNMS Ggraph Definitions](https://docs.opennms.com/horizon/33/operation/deep-dive/performance-data-collection/graphs.html)
+* [Creating OpenNMS Graph Definitions](https://docs.opennms.com/horizon/33/operation/deep-dive/performance-data-collection/graphs.html)
 * [RRDTool tutorial](https://oss.oetiker.ch/rrdtool/tut/rrdtutorial.en.html)
 
 Fortunately when you compile a mib, the mib compiler generates a simple graph definiton for each of the metrics as a starting point.
