@@ -51,7 +51,7 @@ You can access the following exposed services through the host system's localhos
 |ssh&nbsp;admin@localhost&nbsp;-p&nbsp;8101 | The Horizon Karaf CLI via SSH<BR>If you dont have an SSH client, you can access this using `docker compose exec horizon ssh admin@localhost -p 8101` |
 |ssh&nbsp;admin@localhost&nbsp;-p&nbsp;8201 | The Minion1 Karaf CLI via SSH<BR>`docker compose exec minion1 ssh admin@localhost -p 8201` |
 |[http://localhost:3000](http://localhost:3000) |The Grafana web user interface|
-|linux-01&nbsp;localhost:1610&nbsp;udp<BR>linux-02&nbsp;localhost:1611&nbsp;udp<BR>linux-02&nbsp;localhost:1612&nbsp;udp<BR>linux-04&nbsp;localhost:1613&nbsp;udp | Use these ports if you want to access the SNMP agents from your host system.<br>Inside the Docker `minimal-minion-activemq`, they are listening to the default port 161/udp.|
+|linux-01&nbsp;localhost:1610&nbsp;udp<BR>linux-02&nbsp;localhost:1611&nbsp;udp<BR>linux-02&nbsp;localhost:1612&nbsp;udp<BR>linux-04&nbsp;localhost:1613&nbsp;udp | Use these ports if you want to access the SNMP agents from your host system.<br>Inside the Docker containers in `minimal-minion-activemq`, they are listening to the default port 161/udp.|
 
 The docker compose project hosts the following containers:
 
