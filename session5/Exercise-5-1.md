@@ -33,14 +33,16 @@ OpenNMS should then begin collecting the three load averages defined above from 
 
 ## Tasks
 
-The lab for this exercise is in the [session5/minimal-minion-activemq](../session5/minimal-minion-activemq) directory using docker compose.
+The lab for this exercise is in the [session5/initial-example/minimal-minion-activemq](../session5/initial-example/minimal-minion-activemq) directory using docker compose.
+
+(a completed example is provided in [session5/completed-example/minimal-minion-activemq](../session5/completed-example/minimal-minion-activemq) but try the exercises before running this.
 
 Example files and MIBs for this exercise are in [session5/example-configurations](../session5/example-configurations)
 
-Before you spin up the minimal-minion-activemq, please verify with `docker ps` you don't have any other docker compose projects from previous sections running.
+Before you spin up the initial-example/minimal-minion-activemq, please verify with `docker ps` you don't have any other docker compose projects from previous sections running.
 
 ```bash
-cd minimal-minion-activemq
+cd initial-example/minimal-minion-activemq
 docker compose up -d
 ```
 You can access the following exposed services through the host system's localhost:
@@ -51,7 +53,7 @@ You can access the following exposed services through the host system's localhos
 |ssh&nbsp;admin@localhost&nbsp;-p&nbsp;8101 | The Horizon Karaf CLI via SSH<BR>If you dont have an SSH client, you can access this using `docker compose exec horizon ssh admin@localhost -p 8101` |
 |ssh&nbsp;admin@localhost&nbsp;-p&nbsp;8201 | The Minion1 Karaf CLI via SSH<BR>`docker compose exec minion1 ssh admin@localhost -p 8201` |
 |[http://localhost:3000](http://localhost:3000) |The Grafana web user interface|
-|linux-01&nbsp;localhost:1610&nbsp;udp<BR>linux-02&nbsp;localhost:1611&nbsp;udp<BR>linux-02&nbsp;localhost:1612&nbsp;udp<BR>linux-04&nbsp;localhost:1613&nbsp;udp | Use these ports if you want to access the SNMP agents from your host system.<br>Inside the Docker containers in `minimal-minion-activemq`, they are listening to the default port 161/udp.|
+|linux-01&nbsp;localhost:1610&nbsp;udp<BR>linux-02&nbsp;localhost:1611&nbsp;udp<BR>linux-02&nbsp;localhost:1612&nbsp;udp<BR>linux-04&nbsp;localhost:1613&nbsp;udp | Use these ports if you want to access the SNMP agents from your host system.<br>Inside the Docker containers in `initial-example/minimal-minion-activemq`, they are listening to the default port 161/udp.|
 
 The docker compose project hosts the following containers:
 

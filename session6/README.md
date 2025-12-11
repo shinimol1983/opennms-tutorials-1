@@ -1,14 +1,20 @@
-# Session 6 Performance
 
 [Main Menu](../workup/README.md) | [Session 6](../session6/README.md)
 
-The material in this session is contained in [Session 5](../session5/README.md)
+# Session 6 Consolidate with a Complete Example
 
-[Session 6 Video](https://youtu.be/0Sk5pMC_L3Q)  (DEPRICATED - to be updated to match new material)
+In this session we will look at a complete example which simulates monitoring a broadcast radio site.
 
+The full example is in the following project
 
-[Exercise-5-3](../session5/Exercise-5-3.md)  Compiling a MIB.
+[session6/kuwaiba-opennms-radio](../session6/kuwaiba-opennms-radio)
 
-[AdditionalNotes1.md](../session5/AdditionalNotes1.md) Miscellaneous notes.
+This example demonstrates
+
+* Mib compilation for broadcast radio equipment
+* Minion configuration for multiple sites
+* Grafana dashboard combining geographical and customer data
+* Provisioning Integration Server
+* Integration with an open source inventory solution Kuwaiba
 
 
