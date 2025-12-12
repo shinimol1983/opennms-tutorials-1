@@ -61,8 +61,15 @@ See [OpenNMS documentation on thresholds](https://docs.opennms.com/horizon/33/op
 
 - [ ] Install the `stress-ng` command on `linux-03` which can be used to simulate a high workload to trigger a threshold exceeded
 
+NOTE THESE INSTRUCTIONS NEED UPDATED 
 ```bash
 docker compose exec -u root linux-03 apk add --no-cache stress-ng # Install the required package in the linux-03 container
 docker compose exec -u root linux-03 stress-ng -c 1 -l 55 # Simulate ~55% CPU usage
+```
+NOTE as of 2024 centos 7 is no longer maintained so need the following commands
+```
+sed -i 's/mirror\.centos\.org/vault.centos.org/g' /etc/yum.repos.d/CentOS-*.repo
+sed -i 's/^#.*baseurl=http/baseurl=http/g' /etc/yum.repos.d/CentOS-*.repo
+sed -i 's/^mirrorlist=http/#mirrorlist=http/g' /etc/yum.repos.d/CentOS-*.repo
 ```
 
