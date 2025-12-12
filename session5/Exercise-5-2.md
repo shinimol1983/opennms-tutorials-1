@@ -110,6 +110,10 @@ File: `etc/collectd-configuration.xml`
     <parameter key="thresholding-enabled" value="true"/>
   </service>
 </package>
+
+ <!-- dont forget to add a service definition at the bottom of the file -->
+ <!-- Exercise 5.2 -->
+ <collector service="SNMP-Custom-Agent" class-name="org.opennms.netmgt.collectd.SnmpCollector"/>
 ```
 
 ### Step 5: Define a SNMP-Custom-Agent service on an interface
