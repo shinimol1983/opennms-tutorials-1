@@ -63,8 +63,8 @@ See [OpenNMS documentation on thresholds](https://docs.opennms.com/horizon/33/op
 - [ ] [Stress-ng tutorial](https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/)
 - [ ] [Stress-ng project](https://github.com/ColinIanKing/stress-ng)
 
-NOTE The linux SNMP containers are based on Centos 7.
-As of 2024 Centos 7 is no longer maintained so we need the following commands to install the archive packages and get stress-ng from EPEL.
+NOTE The linux SNMP containers in this tutorial are based on Centos 7.
+As of 2024 Centos 7 is no longer maintained so we need to use the following commands to install the archive packages and get `stress-ng` from `EPEL`.
 
 ```
 docker compose exec -u root linux-03 bash
