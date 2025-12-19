@@ -1,6 +1,6 @@
 [Main Menu](../README.md) | [Session 2](../session2/README.md)
 
-# Session 2 OpenNMS Configuration, Events and Alarms and Traps
+# Session 2 OpenNMS Configuration, Provisioning, Service and Web Site Monitoring
 
 ## Contents
 1. OpenNMS Configuration Overview
