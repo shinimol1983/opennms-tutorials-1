@@ -4,7 +4,7 @@ Git Repository of OpenNMS tutorial examples
 
 This is tutorial is version 2025-Horizon33 targeting OpenNMS Horizon 33 / Meridian 2025.
 
-**Note** Some of the videos with eash session are from a previous version of this tutorial. 
+**Note** Some of the videos with each session are from a previous version of this tutorial. 
   They are still mostly aligned with the content but new videos will be created for this version as it is fully updated.
 
 For previous versions of this tutorial see [Version History](../main/versionHistory.md)
