@@ -28,7 +28,7 @@ Enjoy &#128512;
 
 [session5](../main/session5/) Performance Data Collection using SNMP
 
-[session6](../main/session6/) Full Worked Example, Summary adn Wrap Up
+[session6](../main/session6/) Full Worked Example, Summary and Wrap Up
 
 [Extra Examples](../main/extraExamples/) Additional Examples in support of the tutorials
 
