@@ -1,7 +1,7 @@
 
 [Main Menu](../README.md) | [Session 3](../session3/README.md)
 
-# Session 3 Database Event and Alarm Enrichment with the Event Translator and Jboss Rules (Drools)
+# Session 3 OpenNMS Events And Alarms
 
 ## Session 3 Videos
 
